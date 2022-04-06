@@ -22,33 +22,20 @@ async function login() {
 }
 
 function onGameStateChanged(state) {
-  if (state.red === "true") {
-    document.querySelector(".light.red").classList.remove("deactivated");
-    document.querySelector(".light.red").parentElement.querySelector(".label")
-      .innerHTML = "Activated";
-  } else {
-    document.querySelector(".light.red").classList.add("deactivated");
-    document.querySelector(".light.red").parentElement.querySelector(".label")
-      .innerHTML = "Deactivated";
-  }
-  if (state.green === "true") {
-    document.querySelector(".light.green").classList.remove("deactivated");
-    document.querySelector(".light.green").parentElement.querySelector(".label")
-      .innerHTML = "Activated";
-  } else {
-    document.querySelector(".light.green").classList.add("deactivated");
-    document.querySelector(".light.green").parentElement.querySelector(".label")
-      .innerHTML = "Deactivated";
-  }
-  if (state.blue === "true") {
-    document.querySelector(".light.blue").classList.remove("deactivated");
-    document.querySelector(".light.blue").parentElement.querySelector(".label")
-      .innerHTML = "Activated";
-  } else {
-    document.querySelector(".light.blue").classList.add("deactivated");
-    document.querySelector(".light.blue").parentElement.querySelector(".label")
-      .innerHTML = "Deactivated";
-  }
+    toggleColorState("red", state.red);
+    toggleColorState("green", state.green);
+    toggleColorState("blue", state.blue);
+}
+
+function toggleColorState(color, state) {
+    let element = document.querySelector(`.light.${color}`);
+    if (state === "true") {
+        element.classList.remove("deactivated");
+        element.parentElement.querySelector(".label").innerHTML = "Activated";
+      } else {
+        element.classList.add("deactivated");
+        element.parentElement.querySelector(".label").innerHTML = "Deactivated";
+      }
 }
 
 function onColorClicked(event) {

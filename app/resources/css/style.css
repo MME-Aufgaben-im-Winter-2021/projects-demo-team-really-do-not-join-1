@@ -13,11 +13,6 @@
     --jet: #343434ff;
 }
 
-.attachment-full {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 
 .hidden {
     display: none !important;
@@ -41,4 +36,73 @@ body {
 .ui h1 {
     text-align: center;
     color: var(--jet);
+}
+
+.ui .content {
+    display: flex;
+    flex-direction: row;
+}
+
+.ui .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+}
+
+.ui .login label {
+    width: 15vw;
+    text-align: center;
+}
+
+.ui .login input {
+    width: 15vw;
+    margin: 1vw;
+}
+
+.ui .game {
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ui .game .light {
+    display: block;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-color: var(--jet);
+}
+
+.ui .game .light:hover {
+    cursor: pointer;
+    opacity: 0.75 !important;
+}
+
+.ui .game .light.red {
+    background-color: var(--ruby) !important;
+}
+
+.ui .game .light.green {
+    background-color: var(--ocean-green) !important;
+}
+
+.ui .game .light.blue {
+    background-color: var(--prussian-blue) !important;
+}
+
+.ui .game .light.deactivated {
+    opacity: 0.2;
+}
+
+.status {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98vw;
+    padding: 1vw;
+    height: 5vh;
+    background-color: var(--jet);
+    color: var(--snow);
+    line-height: 5vh;
 }

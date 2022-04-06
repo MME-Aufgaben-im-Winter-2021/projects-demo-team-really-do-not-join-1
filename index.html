@@ -6,14 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MME: Projekte im WS 2021/22</title>
     <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@6.0.1/dist/iife/sdk.min.js"></script>
 </head>
 
 <body>
     <div class="ui">
         <h1>MME: Projekte im WS 2021/22</h1>
+        <div class="content">
+            <div class="login">
+                <label for="email">E-Mail</label>
+                <input type="text" name="email">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <input type="button" name="login" value="Login">
+            </div>
+            <div class="game">
+                <span class="light-container" data-color="red">
+                    <span class="light red deactivated"></span>
+                    <span class="label">Deactivated</span>
+                </span>
+                <span class="light-container" data-color="green">
+                    <span class="light green deactivated"></span>
+                    <span class="label">Deactivated</span>
+                </span>
+                <span class="light-container" data-color="blue">
+                    <span class="light blue deactivated"></span>
+                    <span class="label">Deactivated</span>
+                </span>
+            </div>
+        </div>
+        <div class="status">
+            <span class="connected">Offline</span>
+        </div>
     </div>
 
-   <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./src/index.js"></script>
 </body>
 
 </html>
